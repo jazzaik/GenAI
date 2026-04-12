@@ -27,3 +27,6 @@ a sample prompt is attached below
 
 Build a webpage for a simple car showroom with a clean grid view of available cars and basic filters (price, brand, fuel type, and transmission). Keep the design simple, modern, and easy to navigate. The showroom is called Velocity Motors and uses a sleek color palette with dark tones, whites, and subtle metallic accents. Include a hero section, featured cars, and a minimal product detail view.
 Build it in in Figma here - This should be your figma link.
+
+output: GenAI/outputs/velocity-motors-output.png
+
