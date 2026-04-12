@@ -12,18 +12,18 @@
 
     :root {
       --bg-primary:   #0A0A0B;
-      --bg-secondary: #0E0E10;
-      --bg-card:      #191920;
+      --bg-secondary: #121214;
+      --bg-card:      #19191b;
       --bg-card-sm:   #121214;
-      --bg-chip:      #1E1E22;
+      --bg-chip:      #1E1E21;
       --border:       #2A2A2E;
-      --border-light: #222226;
+      --border-light: #2A2A2E;
       --text-primary: #FFFFFF;
-      --text-secondary: #A0A0A6;
-      --text-muted:   #666668;
-      --gold:         #D4AF37;
+      --text-secondary: #A1A1A6;
+      --text-muted:   #66666b;
+      --gold:         #ffc300;
       --gold-dim:     rgba(212,175,55,.15);
-      --gold-border:  rgba(212,175,55,.35);
+      --gold-border:  rgba(212,175,55,.4);
     }
 
     html { scroll-behavior: smooth; }
@@ -40,10 +40,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      height: 72px;
-      background: rgba(10,10,11,.96);
+      height: 80px;
+      background: rgba(10,10,11,.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #2a2a2c;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -57,16 +57,16 @@
       text-decoration: none;
     }
     .logo-mark {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
       background: var(--gold);
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
       flex-shrink: 0;
     }
     .logo-text {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .08em;
       color: var(--text-primary);
     }
 
@@ -76,10 +76,10 @@
       list-style: none;
     }
     .nav-links a {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: .04em;
-      color: var(--text-secondary);
+      letter-spacing: .02em;
+      color: #afafb4;
       text-decoration: none;
       transition: color .2s;
     }
@@ -101,11 +101,11 @@
 
     .btn-outline {
       background: transparent;
-      color: var(--text-primary);
-      border: 1px solid rgba(255,255,255,.25);
+      color: #e6e6e6;
+      border: 1px solid #737378;
       border-radius: 4px;
-      padding: 14px 32px;
-      font-size: 14px;
+      padding: 16px 32px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: border-color .2s, color .2s;
@@ -114,15 +114,15 @@
 
     /* ── HERO ───────────────────────────────────────────── */
     .hero {
-      min-height: 640px;
+      min-height: 680px;
       display: flex;
       align-items: center;
       padding: 80px 80px 80px;
       gap: 80px;
-      background: linear-gradient(115deg, #0F0F12 0%, #13110A 100%);
+      background: linear-gradient(to right, #0e0e10 0%, #bfa773 100%);
     }
 
-    .hero-content { flex: 0 0 540px; }
+    .hero-content { flex: 0 0 580px; }
 
     .badge {
       display: inline-flex;
@@ -199,46 +199,39 @@
       flex: 1;
       min-height: 520px;
       border-radius: 12px;
-      background: #111114;
-      border: 1px solid var(--gold-border);
+      background: #1a1a1c;
+      border: 1px solid rgba(212,175,55,0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
       padding: 40px;
     }
     .hero-car-placeholder {
-      width: 100%;
-      max-width: 480px;
+      width: 440px;
       height: 220px;
       border-radius: 8px;
-      background: linear-gradient(135deg, #1A1A1F 0%, #141210 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      letter-spacing: .04em;
+      background: #26262a;
     }
     .hero-car-label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: .1em;
-      color: rgba(212,175,55,.65);
+      letter-spacing: .08em;
+      color: rgba(212,175,55,0.7);
     }
     .hero-car-name {
       font-size: 22px;
       font-weight: 700;
     }
     .hero-car-price {
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 15px;
+      color: #8c8c91;
     }
 
     /* ── FILTER BAR ─────────────────────────────────────── */
     .filter-bar {
-      height: 72px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -329,7 +322,7 @@
     .btn-outline-gold:hover { background: var(--gold-dim); }
 
     /* ── FEATURED CARDS (3-col) ─────────────────────────── */
-    .featured-section { background: var(--bg-primary); }
+    .featured-section { background: #0a0a0b; }
 
     .cards-3 {
       display: grid;
@@ -351,30 +344,30 @@
 
     .card-image {
       width: 100%;
-      height: 220px;
-      background: linear-gradient(135deg, #1A1A1F 0%, #14120A 100%);
+      height: 240px;
+      background: #f5f5f5;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
     }
     .card-image-inner {
-      width: 72%;
-      height: 55%;
+      width: 64%;
+      height: 54%;
       border-radius: 6px;
-      background: #232328;
+      background: #29292d;
     }
 
     .card-tag {
       position: absolute;
-      top: 14px;
+      bottom: 14px;
       left: 14px;
       background: var(--gold);
-      color: #0F0F10;
-      font-size: 9px;
+      color: #0f0f10;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: .1em;
-      padding: 4px 9px;
+      letter-spacing: .06em;
+      padding: 5px 10px;
       border-radius: 3px;
     }
 
@@ -452,7 +445,7 @@
     .btn-wishlist:hover { color: #e05858; }
 
     /* ── ALL CARS SECTION (4-col) ───────────────────────── */
-    .all-cars-section { background: #0D0D10; }
+    .all-cars-section { background: #0e0e0f; }
 
     .active-filters {
       display: flex;
@@ -499,17 +492,17 @@
 
     .card-sm-image {
       width: 100%;
-      height: 160px;
-      background: linear-gradient(135deg, #181820 0%, #12100A 100%);
+      height: 168px;
+      background: linear-gradient(to bottom, #1a1a1c 0%, #110f0a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .card-sm-image-inner {
-      width: 68%;
-      height: 52%;
+      width: 66%;
+      height: 54%;
       border-radius: 4px;
-      background: #232328;
+      background: #b7b7d0;
     }
 
     .card-sm-body { padding: 14px 16px; }
@@ -575,7 +568,7 @@
       align-items: center;
       gap: 8px;
       padding: 0 80px;
-      background: #0D0D10;
+      background: #0e0e0f;
       border-bottom: 1px solid var(--border);
       font-size: 13px;
     }
@@ -596,36 +589,23 @@
     }
 
     /* Gallery */
-    .gallery { flex: 0 0 640px; }
+    .gallery { flex: 0 0 700px; }
 
     .main-image {
-      width: 100%;
-      height: 400px;
+      width: 700px;
+      height: 420px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #18181F 0%, #141208 100%);
+      background: linear-gradient(to right, #1a1a1c, #14120b);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       margin-bottom: 16px;
     }
     .main-image-inner {
-      width: 74%;
-      height: 60%;
+      width: 540px;
+      height: 260px;
       border-radius: 8px;
-      background: #232328;
-    }
-    .badge-360 {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: rgba(0,0,0,.65);
-      backdrop-filter: blur(4px);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #fff;
+      background: #b7b7d0;
     }
 
     .thumbnails {
@@ -633,10 +613,10 @@
       gap: 12px;
     }
     .thumb {
-      flex: 1;
-      height: 88px;
+      width: 158px;
+      height: 96px;
       border-radius: 6px;
-      background: #14141A;
+      background: #1a1a1c;
       border: 1px solid var(--border);
       cursor: pointer;
       transition: border-color .2s;
@@ -935,7 +915,7 @@
       </div>
     </div>
     <div class="hero-panel">
-      <div class="hero-car-placeholder">[ Car Image ]</div>
+      <div class="hero-car-placeholder"></div>
       <div class="hero-car-label">2024 FEATURED MODEL</div>
       <div class="hero-car-name">Porsche 911 Carrera</div>
       <div class="hero-car-price">From $134,900</div>
@@ -1159,7 +1139,6 @@
       <div class="gallery">
         <div class="main-image">
           <div class="main-image-inner"></div>
-          <div class="badge-360">360° View</div>
         </div>
         <div class="thumbnails">
           <div class="thumb active"></div>
