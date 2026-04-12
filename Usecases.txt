@@ -38,7 +38,7 @@ output: https://github.com/jazzaik/GenAI/blob/main/outputs/velocity-motors-outpu
 
 3. Updating Changes from Figma to Code
 Claude enables designers to review changes and pull the updates to the code with just one prompt. This dramatically reduces the back-and-forth between design and development teams, 
-allowing updates in Figma—such as layout tweaks, spacing adjustments, or component changes—to be quickly translated into production-ready code. It can automatically trigger Gitpull requests for Pull requests.
+allowing updates in Figma—such as layout tweaks, spacing adjustments, or component changes—to be quickly translated into production-ready code. It can automatically trigger Pull requests in the Git Repository without manual intervention required.
 Additionaly it also generates the summary of changes done and accurately captures the changes done.
 
 output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
