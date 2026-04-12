@@ -1,0 +1,2 @@
+# GenAI
+A practical repository dedicated to exploring, testing, and documenting AI tools that enhance modern design workflows. It covers experiments with generative design, prototyping, automation, and creative augmentation—helping designers evaluate tools, compare results, and integrate AI into real-world projects efficiently.
