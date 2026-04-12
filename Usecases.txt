@@ -32,7 +32,7 @@ Prompt
 Build a webpage for a simple car showroom with a clean grid view of available cars and basic filters (price, brand, fuel type, and transmission). Keep the design simple, modern, 
 and easy to navigate. The showroom is called Velocity Motors and uses a sleek color palette with dark tones, whites, and subtle metallic accents. 
 Include a hero section, featured cars, and a minimal product detail view.
-Build it in in Figma here - This should be your figma link.
+Build it in Figma here - This should be your figma link.
 
 output: https://github.com/jazzaik/GenAI/blob/main/outputs/velocity-motors-output.png
 
@@ -41,5 +41,6 @@ Claude enables designers to review changes and pull the updates to the code with
 allowing updates in Figma—such as layout tweaks, spacing adjustments, or component changes—to be quickly translated into production-ready code. It can automatically trigger Gitpull requests for Pull requests.
 Additionaly it also generates the summary fo changes done and accurately captures the changes done.
 
-output: 
+output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
+
 
