@@ -47,8 +47,8 @@ Prompt: Analyze the changes in the design Frame Link- and update the code accord
 output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
 
 
-4. Using an existing Design system
+4. Using an existing Design system (In-Progress)
 Claude is usually already aware of some of the popular design systems like material design, so we don’t even need figma file, publicly available design systems can be used directly or 
 else you can choose to feed your own design systems and update the design as well as the code
 
-Output: 
+Output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20System%20Integration.png
