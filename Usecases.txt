@@ -1,8 +1,12 @@
-This repository documents a collection of practical design workflows that combine the strengths of Claude Code and Figma Make prompts to accelerate and enhance the product design process. It showcases how modern AI-assisted tools can be integrated into real-world design use cases, bridging the gap between ideation, prototyping, and implementation.
+This repository documents a collection of practical design workflows that combine the strengths of Claude Code and Figma Make prompts to accelerate and enhance the product design process. 
+It showcases how modern AI-assisted tools can be integrated into real-world design use cases, bridging the gap between ideation, prototyping, and implementation.
 
-At its core, the repository explores how Claude Code can be used to generate structured logic, UI patterns, and interaction flows directly from natural language inputs. These outputs are then paired with Figma Make prompts, enabling designers to quickly translate abstract ideas into tangible visual components within Figma. This synergy allows for rapid iteration, reducing the friction typically associated with moving from concept to prototype.
+At its core, the repository explores how Claude Code can be used to generate structured logic, UI patterns, and interaction flows directly from natural language inputs. 
+These outputs are then paired with Figma Make prompts, enabling designers to quickly translate abstract ideas into tangible visual components within Figma. This synergy allows for rapid iteration, 
+reducing the friction typically associated with moving from concept to prototype.
 
-The documented use cases cover a range of scenarios, such as generating design systems, creating reusable UI components, prototyping user journeys, and refining micro-interactions. Each example demonstrates how prompts can be crafted to produce consistent, scalable results, making the process both repeatable and adaptable across different product contexts.
+The documented use cases cover a range of scenarios, such as generating design systems, creating reusable UI components, prototyping user journeys, and refining micro-interactions. 
+Each example demonstrates how prompts can be crafted to produce consistent, scalable results, making the process both repeatable and adaptable across different product contexts.
 
 Additionally, the repository emphasizes prompt design as a critical skill. It highlights best practices for writing clear, context-rich instructions that yield high-quality outputs from both Claude Code and Figma Make. By standardizing prompt structures, teams can maintain design consistency while also improving collaboration between designers and developers.
 
@@ -21,10 +25,21 @@ Note: After the initial setup save the file, /exit the session and launch claude
 
 
 2. Generate designs in figma as well as code.
-Claude enables designers to generate designs directly within Figma and parallely deploy those designs using code. Since the context is new, the initial prompts may consume a significant number of tokens. A sample prompt is attached below for reference.
+Claude enables designers to generate designs directly within Figma and parallely deploy those designs using code. 
+Since the context is new, the initial prompts may consume a significant number of tokens. A sample prompt is attached below for reference.
 
 Prompt
-Build a webpage for a simple car showroom with a clean grid view of available cars and basic filters (price, brand, fuel type, and transmission). Keep the design simple, modern, and easy to navigate. The showroom is called Velocity Motors and uses a sleek color palette with dark tones, whites, and subtle metallic accents. Include a hero section, featured cars, and a minimal product detail view.
+Build a webpage for a simple car showroom with a clean grid view of available cars and basic filters (price, brand, fuel type, and transmission). Keep the design simple, modern, 
+and easy to navigate. The showroom is called Velocity Motors and uses a sleek color palette with dark tones, whites, and subtle metallic accents. 
+Include a hero section, featured cars, and a minimal product detail view.
 Build it in in Figma here - This should be your figma link.
 
 output: https://github.com/jazzaik/GenAI/blob/main/outputs/velocity-motors-output.png
+
+3. Updating Changes from Figma to Code
+Claude enables designers to review changes and pull the updates to the code with just one prompt. This dramatically reduces the back-and-forth between design and development teams, 
+allowing updates in Figma—such as layout tweaks, spacing adjustments, or component changes—to be quickly translated into production-ready code. It can automatically trigger Gitpull requests for Pull requests.
+Additionaly it also generates the summary fo changes done and accurately captures the changes done.
+
+output: 
+
