@@ -34,7 +34,8 @@ and easy to navigate. The showroom is called Velocity Motors and uses a sleek co
 Include a hero section, featured cars, and a minimal product detail view.
 Build it in Figma here - This should be your figma link.
 
-output: https://github.com/jazzaik/GenAI/blob/main/outputs/velocity-motors-output.png
+Output
+https://github.com/jazzaik/GenAI/blob/main/outputs/velocity-motors-output.png
 
 3. Updating Changes from Figma to Code
 Claude enables designers to review changes and pull the updates to the code with just one prompt. This dramatically reduces the back-and-forth between design and development teams, 
@@ -45,7 +46,8 @@ Additionaly it also generates the summary of changes done and accurately capture
 Prompt
 Analyze the changes in the design Frame Link- and update the code accordingly.
 
-output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
+Output
+https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
 
 
 4. Using an existing Design system (In-Progress)
@@ -55,4 +57,5 @@ else you can choose to feed your own design systems and update the design as wel
 Prompt
 Will be provided soon
 
-Output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20System%20Integration.png
+Output
+https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20System%20Integration.png
