@@ -14,7 +14,7 @@ you would require the following
 ✅ Claude Pro Plan, INR 2330
 ✅ Figma Pro Plan, INR 2330
 ✅ A figma API token that needs to be generated from your account settings.
-✅ Enable the figma MCP server
+✅ Enable the figma MCP server and gain the local server link ending with 3804
 ✅ Share Link access should be public without any password
 
 Note: After the initial setup save the file, /exit the session and launch claude again. You get 44k tokens allowance whic refreshes every 5 hrs so utilize them wisely.
