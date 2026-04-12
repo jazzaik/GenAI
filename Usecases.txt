@@ -42,7 +42,8 @@ allowing updates in Figma—such as layout tweaks, spacing adjustments, or compo
 in the Git Repository without manual intervention required.
 Additionaly it also generates the summary of changes done and accurately captures the changes done.
 
-Prompt: Analyze the changes in the design Frame Link- and update the code accordingly.
+Prompt
+Analyze the changes in the design Frame Link- and update the code accordingly.
 
 output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20Changes.png
 
@@ -50,5 +51,8 @@ output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20to%20Code%20
 4. Using an existing Design system (In-Progress)
 Claude is usually already aware of some of the popular design systems like material design, so we don’t even need figma file, publicly available design systems can be used directly or 
 else you can choose to feed your own design systems and update the design as well as the code
+
+Prompt
+Will be provided soon
 
 Output: https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20System%20Integration.png
