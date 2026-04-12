@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velocity Motors — Premium Car Showroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary:   #0A0A0B;
+      --bg-secondary: #0E0E10;
+      --bg-card:      #191920;
+      --bg-card-sm:   #121214;
+      --bg-chip:      #1E1E22;
+      --border:       #2A2A2E;
+      --border-light: #222226;
+      --text-primary: #FFFFFF;
+      --text-secondary: #A0A0A6;
+      --text-muted:   #666668;
+      --gold:         #D4AF37;
+      --gold-dim:     rgba(212,175,55,.15);
+      --gold-border:  rgba(212,175,55,.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* ── NAVBAR ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      background: rgba(10,10,11,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 22px;
+      height: 22px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #0F0F10;
+      border: none;
+      border-radius: 4px;
+      padding: 11px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-gold:hover { opacity: .88; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 4px;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,.55); }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      padding: 80px 80px 80px;
+      gap: 80px;
+      background: linear-gradient(115deg, #0F0F12 0%, #13110A 100%);
+    }
+
+    .hero-content { flex: 0 0 540px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+    .btn-primary-lg {
+      background: var(--gold);
+      color: #0F0F10;
+      border: none;
+      border-radius: 4px;
+      padding: 16px 36px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-primary-lg:hover { opacity: .88; }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--border);
+    }
+    .stat-num {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Hero right panel */
+    .hero-panel {
+      flex: 1;
+      min-height: 520px;
+      border-radius: 12px;
+      background: #111114;
+      border: 1px solid var(--gold-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 40px;
+    }
+    .hero-car-placeholder {
+      width: 100%;
+      max-width: 480px;
+      height: 220px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1A1A1F 0%, #141210 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+    .hero-car-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: rgba(212,175,55,.65);
+    }
+    .hero-car-name {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .hero-car-price {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* ── FILTER BAR ─────────────────────────────────────── */
+    .filter-bar {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .filter-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--gold);
+      margin-right: 6px;
+    }
+    .filter-sep {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+      margin: 0 6px;
+    }
+
+    .filter-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--bg-chip);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text-primary);
+      transition: border-color .2s;
+      white-space: nowrap;
+    }
+    .filter-chip:hover { border-color: rgba(255,255,255,.3); }
+    .filter-chip .chip-label { color: var(--text-muted); font-size: 10px; letter-spacing: .04em; }
+    .filter-chip .chip-arrow { color: var(--text-muted); font-size: 11px; }
+
+    .filter-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .result-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── SECTION SHARED ─────────────────────────────────── */
+    section { padding: 72px 80px; }
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 44px;
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 10px 22px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-outline-gold:hover { background: var(--gold-dim); }
+
+    /* ── FEATURED CARDS (3-col) ─────────────────────────── */
+    .featured-section { background: var(--bg-primary); }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .car-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s;
+    }
+    .car-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-3px);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #1A1A1F 0%, #14120A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .card-image-inner {
+      width: 72%;
+      height: 55%;
+      border-radius: 6px;
+      background: #232328;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--gold);
+      color: #0F0F10;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      padding: 4px 9px;
+      border-radius: 3px;
+    }
+
+    .card-body { padding: 20px 22px; }
+
+    .card-brand {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: rgba(212,175,55,.75);
+      margin-bottom: 6px;
+    }
+    .card-model-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .card-model {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .card-price {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .card-specs {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .card-spec { display: flex; align-items: center; gap: 5px; }
+
+    .card-divider {
+      height: 1px;
+      background: var(--border-light);
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-card-primary {
+      background: var(--gold);
+      color: #0F0F10;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-card-primary:hover { opacity: .85; }
+    .btn-wishlist {
+      background: var(--border-light);
+      border: none;
+      border-radius: 4px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .btn-wishlist:hover { color: #e05858; }
+
+    /* ── ALL CARS SECTION (4-col) ───────────────────────── */
+    .all-cars-section { background: #0D0D10; }
+
+    .active-filters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--bg-chip);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    .filter-pill .pill-x {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .car-card-sm {
+      background: var(--bg-card-sm);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s;
+    }
+    .car-card-sm:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-2px);
+    }
+
+    .card-sm-image {
+      width: 100%;
+      height: 160px;
+      background: linear-gradient(135deg, #181820 0%, #12100A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-sm-image-inner {
+      width: 68%;
+      height: 52%;
+      border-radius: 4px;
+      background: #232328;
+    }
+
+    .card-sm-body { padding: 14px 16px; }
+    .card-sm-brand {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: rgba(212,175,55,.65);
+      margin-bottom: 5px;
+    }
+    .card-sm-model {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-sm-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-sm-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .fuel-pill {
+      background: var(--bg-chip);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 3px 8px;
+    }
+
+    .load-more-row {
+      display: flex;
+      justify-content: center;
+    }
+    .btn-load-more {
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 13px 40px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-load-more:hover { background: var(--gold-dim); }
+
+    /* ── PRODUCT DETAIL ─────────────────────────────────── */
+    .detail-section { background: var(--bg-primary); padding: 0; }
+
+    .breadcrumb-bar {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 80px;
+      background: #0D0D10;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .breadcrumb-bar .bc-sep { color: var(--text-muted); }
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .breadcrumb-bar a:hover { color: var(--text-primary); }
+    .breadcrumb-bar .bc-current { color: var(--text-primary); font-weight: 600; }
+
+    .detail-main {
+      display: flex;
+      gap: 60px;
+      padding: 60px 80px 80px;
+      align-items: flex-start;
+    }
+
+    /* Gallery */
+    .gallery { flex: 0 0 640px; }
+
+    .main-image {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #18181F 0%, #141208 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .main-image-inner {
+      width: 74%;
+      height: 60%;
+      border-radius: 8px;
+      background: #232328;
+    }
+    .badge-360 {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(0,0,0,.65);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 12px;
+    }
+    .thumb {
+      flex: 1;
+      height: 88px;
+      border-radius: 6px;
+      background: #14141A;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .thumb:hover { border-color: rgba(255,255,255,.3); }
+    .thumb.active { border: 2px solid var(--gold); }
+
+    /* Detail info */
+    .detail-info { flex: 1; }
+
+    .detail-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .detail-brand {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--gold);
+    }
+    .in-stock-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #223D30;
+      color: #33CC6E;
+      border-radius: 3px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .in-stock-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #33CC6E;
+    }
+
+    .detail-model {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.1;
+      margin-bottom: 26px;
+    }
+
+    .price-block {
+      background: var(--bg-card-sm);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 26px;
+      display: inline-block;
+    }
+    .price-block-label {
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .price-block-value {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--gold);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 26px;
+      background: var(--bg-card-sm);
+    }
+    .spec-cell {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .spec-cell:nth-child(2n) { border-right: none; }
+    .spec-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .spec-cell-label {
+      font-size: 10px;
+      letter-spacing: .04em;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .spec-cell-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .detail-ctas {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-detail-primary {
+      background: var(--gold);
+      color: #0F0F10;
+      border: none;
+      border-radius: 4px;
+      padding: 15px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-detail-primary:hover { opacity: .88; }
+    .btn-detail-secondary {
+      background: var(--bg-chip);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 15px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .btn-detail-secondary:hover { border-color: rgba(255,255,255,.35); }
+    .btn-icon {
+      background: var(--bg-chip);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .btn-icon:hover { color: #e05858; }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: #070708;
+      border-top: 1px solid var(--border);
+      padding: 60px 80px 36px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand-logo {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .social-row {
+      display: flex;
+      gap: 8px;
+    }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      background: var(--bg-chip);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .social-btn:hover { border-color: rgba(255,255,255,.3); color: var(--text-primary); }
+
+    .footer-col-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--text-primary); }
+
+    .footer-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 24px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
+    .footer-legal a:hover { color: var(--text-primary); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      nav, .filter-bar, section, .detail-main,
+      .breadcrumb-bar, footer { padding-left: 40px; padding-right: 40px; }
+      .hero { padding: 60px 40px; gap: 40px; }
+      .hero-content { flex: 0 0 440px; }
+      .hero h1 { font-size: 56px; }
+      .cards-3 { grid-template-columns: 1fr 1fr; }
+      .cards-4 { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero { flex-direction: column; padding: 48px 24px; gap: 40px; }
+      .hero-content { flex: none; }
+      .hero h1 { font-size: 42px; }
+      .hero-panel { min-height: 260px; }
+      .filter-bar { padding: 0 24px; overflow-x: auto; }
+      section { padding: 48px 24px; }
+      .detail-main { flex-direction: column; padding: 40px 24px; }
+      .gallery { flex: none; width: 100%; }
+      .cards-3, .cards-4 { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      footer { padding: 48px 24px 28px; }
+      .breadcrumb-bar { padding: 0 24px; }
+      .detail-model { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-mark"></div>
+      <span class="logo-text">VELOCITY MOTORS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#inventory">Inventory</a></li>
+      <li><a href="#detail">About</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <button class="btn-gold">Book Test Drive</button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="badge">✦&nbsp; PREMIUM CAR SHOWROOM</div>
+      <h1>Find Your<br><span>Perfect Drive.</span></h1>
+      <p class="hero-sub">
+        Explore our curated collection of premium vehicles.<br>
+        Every car, every detail, crafted for the discerning driver.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary-lg" onclick="document.getElementById('inventory').scrollIntoView({behavior:'smooth'})">Explore Inventory</button>
+        <button class="btn-outline" onclick="document.getElementById('detail').scrollIntoView({behavior:'smooth'})">Learn More</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">120+</div>
+          <div class="stat-label">CARS AVAILABLE</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <div class="stat-num">15</div>
+          <div class="stat-label">PREMIUM BRANDS</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <div class="stat-num">5 ★</div>
+          <div class="stat-label">CUSTOMER RATING</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-car-placeholder">[ Car Image ]</div>
+      <div class="hero-car-label">2024 FEATURED MODEL</div>
+      <div class="hero-car-name">Porsche 911 Carrera</div>
+      <div class="hero-car-price">From $134,900</div>
+    </div>
+  </section>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="filter-bar" id="inventory">
+    <div class="filter-group">
+      <span class="filter-label">FILTER BY</span>
+      <div class="filter-sep"></div>
+      <div class="filter-chip">
+        <span class="chip-label">Brand:</span>
+        <span>All Brands</span>
+        <span class="chip-arrow">⌄</span>
+      </div>
+      <div class="filter-chip">
+        <span class="chip-label">Price:</span>
+        <span>All Prices</span>
+        <span class="chip-arrow">⌄</span>
+      </div>
+      <div class="filter-chip">
+        <span class="chip-label">Fuel:</span>
+        <span>All Types</span>
+        <span class="chip-arrow">⌄</span>
+      </div>
+      <div class="filter-chip">
+        <span class="chip-label">Transmission:</span>
+        <span>All</span>
+        <span class="chip-arrow">⌄</span>
+      </div>
+    </div>
+    <div class="filter-right">
+      <span class="result-count">Showing 24 of 120 cars</span>
+      <div class="filter-chip">
+        <span class="chip-label">Sort:</span>
+        <span>Newest</span>
+        <span class="chip-arrow">⌄</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FEATURED CARS ── -->
+  <section class="featured-section">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">FEATURED MODELS</div>
+        <h2 class="section-title">Handpicked for You</h2>
+      </div>
+      <button class="btn-outline-gold">View All Cars →</button>
+    </div>
+    <div class="cards-3">
+
+      <div class="car-card">
+        <div class="card-image">
+          <div class="card-image-inner"></div>
+          <span class="card-tag">FEATURED</span>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">PORSCHE</div>
+          <div class="card-model-row">
+            <span class="card-model">2024 911 Carrera S</span>
+            <span class="card-price">$134,900</span>
+          </div>
+          <div class="card-specs">
+            <span class="card-spec">⛽ Petrol</span>
+            <span class="card-spec">⚙ Automatic</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer">
+            <button class="btn-card-primary" onclick="document.getElementById('detail').scrollIntoView({behavior:'smooth'})">View Details</button>
+            <button class="btn-wishlist">♡</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="card-image">
+          <div class="card-image-inner"></div>
+          <span class="card-tag">HOT DEAL</span>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">BMW</div>
+          <div class="card-model-row">
+            <span class="card-model">2024 M4 Competition</span>
+            <span class="card-price">$89,500</span>
+          </div>
+          <div class="card-specs">
+            <span class="card-spec">⛽ Petrol</span>
+            <span class="card-spec">⚙ Automatic</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer">
+            <button class="btn-card-primary">View Details</button>
+            <button class="btn-wishlist">♡</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="card-image">
+          <div class="card-image-inner"></div>
+          <span class="card-tag">ECO</span>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">TESLA</div>
+          <div class="card-model-row">
+            <span class="card-model">2024 Model S Plaid</span>
+            <span class="card-price">$109,990</span>
+          </div>
+          <div class="card-specs">
+            <span class="card-spec">⚡ Electric</span>
+            <span class="card-spec">⚙ Automatic</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer">
+            <button class="btn-card-primary">View Details</button>
+            <button class="btn-wishlist">♡</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ALL CARS ── -->
+  <section class="all-cars-section">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">ALL INVENTORY</div>
+        <h2 class="section-title">Browse All Cars</h2>
+      </div>
+      <div class="active-filters">
+        <div class="filter-pill">All Brands <span class="pill-x">×</span></div>
+        <div class="filter-pill">Petrol <span class="pill-x">×</span></div>
+        <div class="filter-pill">Automatic <span class="pill-x">×</span></div>
+        <div class="filter-pill">Under $150k <span class="pill-x">×</span></div>
+      </div>
+    </div>
+    <div class="cards-4">
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">AUDI</div>
+          <div class="card-sm-model">2023 RS 7 Sportback</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$118,900</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">MERCEDES</div>
+          <div class="card-sm-model">2024 AMG GT 63</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$161,000</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">FERRARI</div>
+          <div class="card-sm-model">2024 Roma Spider</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$278,000</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">LAMBORGHINI</div>
+          <div class="card-sm-model">2023 Urus S</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$249,000</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">BENTLEY</div>
+          <div class="card-sm-model">2024 Continental GT</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$235,000</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">TESLA</div>
+          <div class="card-sm-model">2024 Model 3 LR</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$52,990</span><span class="fuel-pill">Electric</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">LEXUS</div>
+          <div class="card-sm-model">2023 LC 500</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$97,500</span><span class="fuel-pill">Hybrid</span></div>
+        </div>
+      </div>
+      <div class="car-card-sm">
+        <div class="card-sm-image"><div class="card-sm-image-inner"></div></div>
+        <div class="card-sm-body">
+          <div class="card-sm-brand">RANGE ROVER</div>
+          <div class="card-sm-model">2024 Sport SVR</div>
+          <div class="card-sm-bottom"><span class="card-sm-price">$175,000</span><span class="fuel-pill">Petrol</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="load-more-row">
+      <button class="btn-load-more">Load More Cars</button>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT DETAIL ── -->
+  <div class="detail-section" id="detail">
+    <div class="breadcrumb-bar">
+      <a href="#">← Back to Inventory</a>
+      <span class="bc-sep">›</span>
+      <a href="#">Porsche</a>
+      <span class="bc-sep">›</span>
+      <span class="bc-current">911 Carrera S</span>
+    </div>
+    <div class="detail-main">
+      <div class="gallery">
+        <div class="main-image">
+          <div class="main-image-inner"></div>
+          <div class="badge-360">360° View</div>
+        </div>
+        <div class="thumbnails">
+          <div class="thumb active"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+        </div>
+      </div>
+      <div class="detail-info">
+        <div class="detail-top">
+          <div class="detail-brand">PORSCHE</div>
+          <div class="in-stock-badge">
+            <div class="in-stock-dot"></div>
+            In Stock
+          </div>
+        </div>
+        <div class="detail-model">2024 Porsche<br>911 Carrera S</div>
+        <div class="price-block">
+          <div class="price-block-label">STARTING PRICE</div>
+          <div class="price-block-value">$134,900</div>
+        </div>
+        <div class="specs-grid">
+          <div class="spec-cell"><div class="spec-cell-label">Engine</div><div class="spec-cell-value">3.0L Twin-Turbo</div></div>
+          <div class="spec-cell"><div class="spec-cell-label">Fuel Type</div><div class="spec-cell-value">Petrol</div></div>
+          <div class="spec-cell"><div class="spec-cell-label">Horsepower</div><div class="spec-cell-value">443 hp</div></div>
+          <div class="spec-cell"><div class="spec-cell-label">Transmission</div><div class="spec-cell-value">Automatic PDK</div></div>
+          <div class="spec-cell"><div class="spec-cell-label">0–60 mph</div><div class="spec-cell-value">3.5 seconds</div></div>
+          <div class="spec-cell"><div class="spec-cell-label">Drive</div><div class="spec-cell-value">Rear-Wheel Drive</div></div>
+        </div>
+        <div class="detail-ctas">
+          <button class="btn-detail-primary">Book Test Drive</button>
+          <button class="btn-detail-secondary">Get Financing</button>
+          <button class="btn-icon">♡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">VELOCITY MOTORS</div>
+        <p class="footer-tagline">Where performance meets perfection.<br>Your dream car awaits.</p>
+        <div class="social-row">
+          <div class="social-btn">IN</div>
+          <div class="social-btn">TW</div>
+          <div class="social-btn">IG</div>
+          <div class="social-btn">YT</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">INVENTORY</div>
+        <ul>
+          <li><a href="#">All Cars</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Electric</a></li>
+          <li><a href="#">Luxury</a></li>
+          <li><a href="#">SUVs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">SERVICES</div>
+        <ul>
+          <li><a href="#">Test Drive</a></li>
+          <li><a href="#">Financing</a></li>
+          <li><a href="#">Trade-In</a></li>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">COMPANY</div>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Locations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2024 Velocity Motors. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
