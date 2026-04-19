@@ -66,7 +66,157 @@ Mainstream identified usecases:
 Code Ready Designs
 1. Generate designs in figma as well as code. ✅
 Generate designs directly within Figma and parallely deploy those designs using code especially when DS is not known.
+Time taken: 22 Mins for design and code together. 
 
+Prompt:
+
+You are a senior product designer + frontend engineer with experience in healthcare SaaS and AI-assisted workflows.
+
+Goal:
+Design and generate a production-ready UI for a B2B enterprise platform that uses AI to generate, review, and manage medical documents.
+
+Context:
+- Platform type: AI-powered medical documentation platform (clinical + administrative use)
+- Users:
+  - Doctors (review & approve documents)
+  - Medical scribes (generate/edit drafts)
+  - Operations/admin teams (audit, compliance, reporting)
+- Key workflows:
+  - Generate documents from structured/unstructured inputs
+  - Review, edit, and approve AI-generated content
+  - Track version history and audit logs
+- Priorities:
+  - Accuracy and trust
+  - High efficiency (time-saving for clinicians)
+  - Compliance-ready UX (HIPAA-like mindset, auditability)
+  - Accessibility (WCAG 2.1 AA)
+  - High information density without cognitive overload
+
+Task:
+Create a high-fidelity UI design AND corresponding frontend code for the core workflow:
+→ “AI Document Generation + Review Interface”
+
+---
+
+Design Requirements:
+
+Design System:
+- Use an enterprise-grade system inspired by :contentReference[oaicite:0]{index=0} or :contentReference[oaicite:1]{index=1}
+- Strict 8px spacing grid
+- Neutral, low-fatigue color palette (medical context)
+- Color must encode meaning carefully (e.g., warnings, errors, approved states)
+
+Core Layout:
+- Left sidebar (navigation: Documents, Templates, Audit Logs, Settings)
+- Top bar (search, user role, notifications)
+- Main workspace split into:
+  1. Input panel (patient data / prompts / structured form)
+  2. AI-generated document panel
+  3. Review & comments panel
+
+Key Components:
+- Structured forms (patient info, visit notes)
+- Rich text editor with AI suggestions
+- Diff viewer (compare edits / versions)
+- Status badges (Draft, AI Generated, Reviewed, Approved)
+- Data tables (document history, logs)
+- Filters (date, status, user)
+- Modals (approval confirmation, error handling)
+
+AI-Specific UX:
+- Show AI confidence indicators
+- Highlight AI-generated vs human-edited text
+- Inline suggestions with accept/reject actions
+- “Regenerate” and “Refine” controls
+- Clear disclaimers where needed (AI-assisted content)
+
+States to Include:
+- Loading (AI generating content)
+- Empty (no documents yet)
+- Error (generation failure, validation issues)
+- Edge cases (low confidence AI output)
+
+Accessibility:
+- WCAG 2.1 AA compliance
+- High contrast text and UI elements
+- Keyboard navigable interface
+- Semantic structure (forms, tables, headings)
+- Avoid color-only meaning
+
+---
+
+Figma Output:
+
+Provide:
+- Frame: “Document Generation & Review – Desktop (1440px)”
+- Auto-layout structure for all components
+- Component system:
+  - Buttons, inputs, tables, tags, alerts
+- Design tokens:
+  - Colors (primary, semantic, neutral)
+  - Typography (scale + usage)
+  - Spacing system
+- Clear naming conventions for dev handoff
+- Interaction annotations (hover, focus, validation states)
+
+---
+
+Code Requirements:
+
+Tech Stack:
+- React + Tailwind CSS
+
+Architecture:
+- Modular, reusable components
+- Separation of concerns (layout, components, hooks)
+
+Key Components to Implement:
+- Sidebar navigation
+- Document editor (controlled component)
+- AI suggestion panel
+- Data table with filters
+- Status badges
+
+Functionality:
+- Mock AI-generated content (JSON)
+- Editable document with tracked changes
+- Simulated “AI generate” action
+- Filtering and sorting for document list
+
+Accessibility:
+- ARIA roles where needed
+- Semantic HTML (forms, tables, buttons)
+- Focus states and keyboard navigation
+
+Responsiveness:
+- Desktop-first (min-width 1280px)
+- Graceful adaptation to 1024px
+
+---
+
+Output Format:
+
+1. Design Specification (Figma-ready structure)
+   - Layout breakdown
+   - Component descriptions
+   - Token definitions
+
+2. Component Hierarchy
+   - Tree of React components
+
+3. Full Code Implementation
+   - Clean, readable, modular code
+
+4. Accessibility & Compliance Notes
+   - Contrast, semantics, keyboard support
+   - Risks in medical/AI UX and mitigations
+
+5. Scalability Notes
+   - How this design supports:
+     - additional document types
+     - multi-user collaboration
+     - audit/compliance expansion
+_______________________________________________________________________________________________________________________
 2. Figma Frame → Production-Ready Code 
 Assess whether designs can be translated into clean, structured, and usable frontend code—not just visual replicas.
 
