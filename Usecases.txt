@@ -64,10 +64,10 @@ Test
 Mainstream identified usecases:
 
 Code Ready Designs
-1. Generate designs in figma as well as code.
-Generate designs directly within Figma and parallely deploy those designs using code. 
+1. Generate designs in figma as well as code. ✅
+Generate designs directly within Figma and parallely deploy those designs using code especially when DS is not known.
 
-2. Figma Frame → Production-Ready Code
+2. Figma Frame → Production-Ready Code 
 Assess whether designs can be translated into clean, structured, and usable frontend code—not just visual replicas.
 
 3. Updating Changes from Figma to Code
