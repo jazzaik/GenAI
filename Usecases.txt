@@ -61,142 +61,114 @@ Output
 https://github.com/jazzaik/GenAI/blob/main/outputs/Design%20System%20Integration.png
 Test
 
+Mainstream identified usecases:
 
-6. Wireframe → High-Fidelity UI Conversion
-Check whether rough layouts can be transformed into polished designs while correctly applying visual styles and system rules.
+Code Ready Designs
+1. Generate designs in figma as well as code.
+Generate designs directly within Figma and parallely deploy those designs using code. 
 
-7. Single Screen → Multi-State Expansion
-Assess how well it generates all necessary UI states (error, loading, empty, success) from a single base screen.
-
-8. Feature Flow Generation (End-to-End Journeys)
-Measure its ability to create complete user journeys across multiple screens with logical transitions and continuity.
-
-9. Rapid Prototype Creation Under Time Constraints
-Test speed vs quality when generating a clickable prototype quickly, ensuring flows still make sense.
-
-10. Iterative Design Refinement (Prompt-Based Edits)
-Evaluate whether incremental changes can be applied without breaking previous decisions or introducing inconsistencies.
-
-11. Cross-Platform Adaptation (Web ↔ Mobile ↔ Tablet)
-Check how designs adapt across screen sizes, focusing on layout restructuring rather than simple scaling.
-
-12. Data-Driven UI Generation (from Schemas/JSON)
-Assess how well structured data inputs are translated into UI layouts that handle variability and real-world data conditions.
-
-13. Accessibility Audit & Auto-Fix
-Evaluate its ability to detect and fix accessibility issues like contrast, sizing, and semantic clarity.
-
-14. Design QA / Heuristic Evaluation
-Check if it can identify usability issues, inconsistencies, and violations of UX best practices across screens.
-
-15. Competitor UI Reverse Engineering
-Measure how accurately it reconstructs layouts and infers interaction patterns from existing product references.
-
-16. Stakeholder-Specific UX Variants
-Test the ability to adapt the same feature for different audiences by modifying flows, complexity, and presentation.
-
-17. Localization & Internationalization Adaptation
-Evaluate how designs handle different languages, text lengths, and cultural expectations without breaking layouts.
-
-18. Figma Frame → Production-Ready Code
+2. Figma Frame → Production-Ready Code
 Assess whether designs can be translated into clean, structured, and usable frontend code—not just visual replicas.
 
-19. Component Extraction & Reusability Mapping
-Test how well repeated UI patterns are identified and converted into reusable components.
-
-20. Auto-Generated Design Tokens → Code Sync
-Check if tokens (colors, spacing, typography) are consistently defined and correctly mapped into code variables.
-
-21. Responsive Behavior Mapping in Code
-Evaluate whether layout behavior across breakpoints is properly reflected in the generated code.
-
-22. Interaction Logic → Frontend Implementation
-Test if user interactions (clicks, states, transitions) are correctly translated into working logic.
-
-23. Bug Reproduction → Design + Code Fix
-Assess how effectively a described issue can be understood and resolved through both design and code updates.
-
-24. Code Refactor from Updated Designs
+3. Updating Changes from Figma to Code
 Check if design changes can trigger clean, maintainable updates in existing code without regressions.
 
-25. Design System Generation from Scratch
+4. Auto-Generated Design Tokens → Code Sync
+Check if tokens (colors, spacing, typography) are consistently defined and correctly mapped into code variables.
+
+5. Bug Reproduction → Design + Code Fix
+Assess how effectively a described issue can be understood and resolved through both design and code updates.
+
+6. Global Token Update Propagation
+Evaluate whether changes to tokens cascade correctly across all dependent code and designs.
+
+7. Cross-Platform Adaptation (Web ↔ Mobile ↔ Tablet)
+Check how designs adapt across screen sizes, focusing on layout restructuring rather than simple scaling.
+
+8. Responsive Behavior Mapping in Code
+Evaluate whether layout behavior across provided breakpoints is properly reflected in the generated code.
+
+9. Interaction Logic → Frontend Implementation
+Test if user interactions (clicks, states, transitions) are correctly translated into working logic.
+
+Prototype Fidelity 
+
+1. Using an open source Design system (In-Progress)
+Claude is usually already aware of some of the popular design systems like material design, so we don’t 
+even need figma file, publicly available design systems can be used directly or else you can choose to feed your own design systems and update the design as well as the code
+
+2. Wireframe → High-Fidelity UI Conversion
+Check whether rough layouts can be transformed into polished designs while correctly applying visual styles and system rules.
+
+3. Rapid Prototype Creation Under Time Constraints
+Test speed vs quality when generating a clickable prototype quickly, ensuring flows still make sense.
+
+4. Iterative Design Refinement (Prompt-Based Edits)
+Evaluate whether incremental changes can be applied without breaking previous decisions or introducing inconsistencies.
+
+5. Data-Driven UI Generation (from Schemas/JSON)
+Assess how well structured data inputs are translated into UI layouts that handle variability and real-world data conditions.
+
+6. Accessibility Audit & Auto-Fix
+Evaluate its ability to detect and fix accessibility issues like contrast, sizing, and semantic clarity.
+
+7. Design QA / Heuristic Evaluatio
+Check if it can identify usability issues, inconsistencies, and violations of UX best practices across screens.
+
+8. Competitor UI Reverse Engineering
+Measure how accurately it reconstructs layouts and infers interaction patterns from existing product references.
+
+9. Design System Generation and Documentation from Scratch
 Evaluate the ability to create a scalable, coherent system including tokens, components, and usage rules.
 
-26. Token Creation (Color, Spacing, Typography, Elevation)
-Test how foundational design tokens are defined, structured, and named for reuse.
-
-27. Token Application Consistency Across Screens
-Check whether tokens are applied uniformly or inconsistently overridden in different parts of the UI.
-
-28. Component Creation from Existing UI
-Assess how well existing designs are abstracted into reusable, flexible components.
-
-29. Component Variant Generation (States, Sizes, Themes)
-Test the creation of structured variants that cover different use cases without duplication.
-
-30. Auto-Swap to Existing Design System Components
-Evaluate whether ad-hoc UI elements can be correctly mapped to existing system components.
-
-31. Detect & Fix Detached / Overridden Components
-Check if inconsistencies in component usage are identified and corrected.
-
-32. Design System Compliance Enforcement
+10. Design System Compliance Enforcement
 Assess whether designs adhere to system rules or drift into one-off customizations.
 
-33. Cross-File Component Syncing
-Test consistency and update propagation across multiple files using shared components.
+11. Component Creation from Existing UI
+Assess how well existing designs are abstracted into reusable, flexible components.
 
-34. Global Token Update Propagation
-Evaluate whether changes to tokens cascade correctly across all dependent designs.
+12. Component Variant Generation (States, Sizes, Themes)
+Test the creation of structured variants that cover different use cases without duplication.
 
-35. Theming Support (Light/Dark/Brand Variants)
-Check how effectively themes are applied and maintained without breaking UI consistency.
+13. Auto-Swap to Existing Design System Components
+Evaluate whether ad-hoc UI elements can be correctly mapped to existing system components.
 
-36. Naming Convention Standardization (Layers, Components)
+14. Detect & Fix Detached / Overridden Components
+Check if inconsistencies in component usage are identified and corrected.
+
+15. Naming Convention Standardization (Layers, Components)
 Assess whether layers and components follow consistent, scalable naming patterns.
 
-37. Design System Documentation Generation
-Test the ability to generate clear, usable documentation for components and tokens.
-
-38. Usage Guidelines & Do/Don’t Patterns
-Evaluate whether the system can define when and how components should or shouldn’t be used.
-
-39. Migration from Legacy UI → Design System
+16. Migration from Legacy UI → Design System
 Check how effectively older designs are converted into system-compliant structures.
 
-40. Design System Drift Detection Over Iterations
-Assess whether gradual inconsistencies are detected and flagged.
-
-41. Multi-Designer File Consistency Checks
+17. Multi-Designer File Consistency Checks
 Test how well inconsistencies across contributors are identified and standardized.
 
-42. Version Diffing (Design Iteration Comparison)
-Evaluate the ability to clearly identify and communicate changes between design versions.
-
-43. Prompt-Based Bulk Edits Across Frames
-Check whether large-scale updates can be applied accurately without unintended side effects.
-
-44. Large File Performance & Stability
-Assess responsiveness and reliability when working with complex, heavy design files.
-
-45. Cross-Team Handoff Readiness (Design → Dev → QA)
-Evaluate whether outputs are complete, structured, and usable by downstream teams.
-
-46. Conflicting Constraints Resolution
-Test how the system handles contradictory requirements and prioritizes trade-offs.
-
-47. Partial Updates Without Overwriting Designs
-Assess whether specific changes can be made without resetting unrelated parts of the design.
-
-48. Handling Dense / Complex Enterprise UI
-Evaluate performance and clarity when dealing with information-heavy, complex interfaces.
-
-49. Empty, Error, and Edge State Coverage
-Check whether non-happy-path scenarios are thoroughly addressed.
-
-50. Long Content & Overflow Handling
-Test how layouts respond to extreme content lengths or dynamic data.
-
-51. AI Consistency Across 20+ Screens
+Prototype complexity
+1. AI Consistency Across 50+ Screens
 Assess whether design logic, patterns, and system rules remain consistent at scale.
 
+2. Single Screen → Multi-State Expansion
+Assess how well it generates all necessary UI states (error, loading, empty, success) from a single base screen.
+
+3. Feature Flow Generation (End-to-End Journeys)
+Measure its ability to create complete user journeys across multiple screens with logical transitions and continuity.
+
+4. Cross-Platform Adaptation (Web ↔ Mobile ↔ Tablet)
+Check how designs adapt across screen sizes, focusing on layout restructuring rather than simple scaling.
+
+5. Persona-Specific UX Variants
+Test the ability to adapt the same feature for different audiences by modifying flows, complexity, and presentation.
+
+6. Localization & Internationalization Adaptation
+Evaluate how designs handle different languages, text lengths, and cultural expectations without breaking layouts.
+
+7. Theming Support (Light/Dark/Brand Variants)
+Check how effectively themes are applied and maintained without breaking UI consistency.
+
+8. Handling Dense / Complex Enterprise UI
+Evaluate performance and clarity when dealing with information-heavy, complex interfaces.
+
+9. Long Content & Overflow Handling
+Test how layouts respond to extreme content lengths or dynamic data.
