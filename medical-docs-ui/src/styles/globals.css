@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets & focus management ───────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    @apply bg-neutral-100 text-neutral-800 font-sans;
+    min-width: 1280px;
+  }
+
+  /* WCAG 2.1 AA — visible focus for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Remove default focus ring (replaced by focus-visible above) */
+  :focus:not(:focus-visible) { outline: none; }
+
+  h1 { @apply text-3xl font-bold text-neutral-900; }
+  h2 { @apply text-2xl font-semibold text-neutral-900; }
+  h3 { @apply text-xl font-semibold text-neutral-800; }
+  h4 { @apply text-lg font-medium text-neutral-800; }
+
+  a {
+    @apply text-primary-600 underline-offset-2;
+  }
+  a:hover { @apply text-primary-700; }
+}
+
+/* ── Utility classes ───────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Truncate multi-line */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* AI highlight — purple left border + bg tint */
+  .ai-highlight {
+    @apply border-l-2 border-ai-500 bg-ai-50 pl-3;
+  }
+
+  /* Human-edited highlight */
+  .human-highlight {
+    @apply border-l-2 border-primary-400 bg-primary-50 pl-3;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.neutral.300') transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.neutral.300');
+    border-radius: 3px;
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    @apply bg-neutral-200 rounded animate-pulse;
+  }
+}
+
+/* ── Component classes ─────────────────────────────────────────────────────── */
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-1.5 font-medium
+           rounded transition-all duration-150 focus-visible:ring-2
+           focus-visible:ring-primary-500 focus-visible:ring-offset-1
+           disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-neutral-200 shadow-xs;
+  }
+
+  .section-heading {
+    @apply text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-2;
+  }
+
+  /* Table row hover */
+  .table-row-interactive {
+    @apply transition-colors hover:bg-neutral-50 cursor-pointer;
+  }
+
+  /* Sidebar item */
+  .nav-item {
+    @apply flex items-center gap-2 px-3 py-2 rounded text-sm font-medium
+           text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900
+           transition-colors cursor-pointer;
+  }
+  .nav-item.active {
+    @apply bg-primary-50 text-primary-700;
+  }
+}
