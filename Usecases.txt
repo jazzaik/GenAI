@@ -322,3 +322,29 @@ Evaluate performance and clarity when dealing with information-heavy, complex in
 
 9. Long Content & Overflow Handling
 Test how layouts respond to extreme content lengths or dynamic data.
+
+JIRA MCP and FIGMA MCP integration in Claude
+
+1. Wireframe from Acceptance Criteria 
+Generate a Figma wireframe layout from a Jira ticket's Acceptance Criteria
+
+2. Acceptance crtieria from Design
+Draft Acceptance Criteria from a Figma frame's visible UI elements
+
+4. Screen to Sub-task
+Auto-create Jira sub-tasks when new screens are added to a Figma file
+
+5. AC vs Design Audit
+Detect mismatches between Jira AC and Figma design and surface them as comments
+
+6. Design Change Notify
+Post a Figma comment tagging the designer when AC changes on a linked ticket
+
+7. PR Description Generator
+Auto-generate a PR description from a ticket's AC and Figma design context
+
+8. MOM to User Story
+Parse a meeting MOM and auto-create Jira user stories with AC from action items
+
+9. Missing State Detector
+Flag Figma screens missing states (error, empty, loading) mentioned in AC
